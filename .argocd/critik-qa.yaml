@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: critik-qa
+  namespace: argocd
+  finalizers: ["resources-finalizer.argocd.argoproj.io"]
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:jgilbertcastro/critik-qa-deploy.git
+    targetRevision: HEAD
+    path: ./helm
+    helm:
+      releaseName: critik-qa
+      valueFiles:
+      - values-critik-qa.yaml
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated: {}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: critik-qa
