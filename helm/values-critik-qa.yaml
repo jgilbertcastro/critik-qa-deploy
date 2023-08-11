@@ -8,7 +8,7 @@ image:
   repository: harbor.kr1ps.com/vainas-tech/critik
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "qa"
+  tag: "qa-v2"
 
 imagePullSecrets:
   - name: harborkrips
