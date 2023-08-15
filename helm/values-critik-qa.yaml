@@ -7,7 +7,7 @@ image:
   repository: harbor.kr1ps.com/vainas-tech/critik
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "0.0.2"
+  tag: "0.0.3"
 imagePullSecrets:
   - name: harborkrips
 postgresql:
