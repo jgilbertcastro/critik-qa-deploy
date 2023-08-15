@@ -63,3 +63,4 @@ autoscaling:
 #  vlan: kr1ps-home
 tolerations: []
 affinity: {}
+tag: 0.0.4
