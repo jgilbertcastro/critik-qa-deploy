@@ -3,20 +3,15 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 2
-
 image:
   repository: harbor.kr1ps.com/vainas-tech/critik
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "qa"
-
 imagePullSecrets:
   - name: harborkrips
-
 postgresql:
   secretname: critik-qa-postgresql-cred
-
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: false
@@ -28,7 +23,6 @@ serviceAccount:
 service:
   type: ClusterIP
   port: 80
-
 ingress:
   enabled: true
   annotations:
@@ -41,24 +35,23 @@ ingress:
         - path: /
           pathType: Prefix
   tls:
-  - hosts:
-      - critik-qa.kr1ps.com
-    secretName: critik-qa-tls
+    - hosts:
+        - critik-qa.kr1ps.com
+      secretName: critik-qa-tls
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+# We usually recommend not to specify default resources and to leave this as a conscious
+# choice for the user. This also increases chances charts run on environments with little
+# resources, such as Minikube. If you do want to specify resources, uncomment the following
+# lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
 autoscaling:
   enabled: false
@@ -66,10 +59,8 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-
 #nodeSelector:
 #  vlan: kr1ps-home
-
 tolerations: []
-
 affinity: {}
+tag: "3"
