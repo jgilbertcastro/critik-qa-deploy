@@ -7,7 +7,7 @@ image:
   repository: harbor.kr1ps.com/vainas-tech/critik
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "qa"
+  tag: "3"
 imagePullSecrets:
   - name: harborkrips
 postgresql:
@@ -38,9 +38,9 @@ ingress:
     - hosts:
         - critik-qa.kr1ps.com
       secretName: critik-qa-tls
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
 resources: {}
 # We usually recommend not to specify default resources and to leave this as a conscious
 # choice for the user. This also increases chances charts run on environments with little
